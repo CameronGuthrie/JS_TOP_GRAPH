@@ -1,0 +1,7 @@
+**/node_modules/
+**/default.real.management
+default.realm
+default.realm.lock
+package-lock.json
+old_app.js
+app copy.js
