@@ -145,14 +145,6 @@ const buildChart = (ctx) => {
     });
 }
 
-let memoryChart = buildChart(document.getElementById('memoryChart').getContext('2d'));
-
-let networkChart = buildChart(document.getElementById('networkChart').getContext('2d'));
-
-let cpuChart = buildChart(document.getElementById('cpuChart').getContext('2d'));
-
-let cpuTempChart = buildChart(document.getElementById('cpuTempChart').getContext('2d'));
-
 setInterval(async () => {
 
     const getData = await get();
@@ -164,7 +156,7 @@ setInterval(async () => {
     let memoryLineData = memoryLine(getData.data);
 
     /*
-    WHAT THE FUCK IS CONTEXT AND HOW IS IT CALLED WITH NO ARGUMENTS BEING USED?!?!?!
+    HOW IS CONTEXT CALLED WITH NO ARGUMENTS BEING USED?!?!?!
     */
 
     let memoryGradient = (context) => {
@@ -316,36 +308,46 @@ setInterval(async () => {
     CPU TEMP
     */
 
-    let cpuTempLineData = cpuTempLine(getData.data);
+    // let cpuTempLineData = cpuTempLine(getData.data);
 
-    if (cpuTempLineData.length >= 20) {
-        lineDataSliced = cpuTempLineData.slice(-20);
-        cpuTempLineData = lineDataSliced;
-    }
+    // if (cpuTempLineData.length >= 20) {
+    //     lineDataSliced = cpuTempLineData.slice(-20);
+    //     cpuTempLineData = lineDataSliced;
+    // }
 
-    document.getElementById("cpuTempNumber").innerHTML = `${JSON.stringify(Math.round(cpuTempLineData[cpuTempLineData.length - 1].y))}&deg;C`;
+    // document.getElementById("cpuTempNumber").innerHTML = `${JSON.stringify(Math.round(cpuTempLineData[cpuTempLineData.length - 1].y))}&deg;C`;
 
-    cpuTempChart.data.datasets = [{
-        label: '',
-        data: cpuTempLineData,
-        borderWidth: 5,
-        showLine: true,
-        fill: true,
-        backgroundColor: colorSixtyAlt,
-        borderColor: cpuTempGradient,
-        tension: 0.1
-    }];
+    // cpuTempChart.data.datasets = [{
+    //     label: '',
+    //     data: cpuTempLineData,
+    //     borderWidth: 5,
+    //     showLine: true,
+    //     fill: true,
+    //     backgroundColor: colorSixtyAlt,
+    //     borderColor: cpuTempGradient,
+    //     tension: 0.1
+    // }];
 
-    cpuTempChart.options.scales.x = {
-        suggestedMin: cpuTempLineData[0].x,
-        suggestedMax: cpuTempLineData[cpuTempLineData.length-1].x,
-        display: false,
-        ticks: {
-            display: false,
-            stepSize: 1
-        }
-    }
+    // cpuTempChart.options.scales.x = {
+    //     suggestedMin: cpuTempLineData[0].x,
+    //     suggestedMax: cpuTempLineData[cpuTempLineData.length-1].x,
+    //     display: false,
+    //     ticks: {
+    //         display: false,
+    //         stepSize: 1
+    //     }
+    // }
 
-    cpuTempChart.update();
+    // cpuTempChart.update();
     
 }, TICK);
+
+
+
+let memoryChart = buildChart(document.getElementById('memoryChart').getContext('2d'));
+
+let networkChart = buildChart(document.getElementById('networkChart').getContext('2d'));
+
+let cpuChart = buildChart(document.getElementById('cpuChart').getContext('2d'));
+
+// let cpuTempChart = buildChart(document.getElementById('cpuTempChart').getContext('2d'));
