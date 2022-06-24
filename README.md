@@ -18,6 +18,6 @@ Clone this down somewhere then from a cli inside the project folder run
 
 * Start the app run `npm start`
 
-* Navigate to the machine's IP followed by :8080 on a networked
+* Navigate to the machine's IP followed by :8080 on a networked device
 
 have fun.
