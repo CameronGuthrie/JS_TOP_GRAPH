@@ -1,8 +1,8 @@
-# Graphs
+# Node Resource Monitor
 
-I made these to monitor my computer performance from my phone while out of the room.
+This project was created to be able to monitor the performance of a machine remotely from a mobile device.
 
-## Examples
+## Examples Graphs
 
 ![CPU](https://raw.githubusercontent.com/CameronGuthrie/JS_TOP_GRAPH/main/assets/CPU.png)
 
